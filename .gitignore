@@ -1,5 +1,7 @@
 # Sublime Text
 *.sublime-*
+#Composer
+composer.lock
 # Binarios y comprimidos
 *.rar
 *.zip
