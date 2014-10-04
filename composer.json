@@ -3,9 +3,20 @@
 	"description": "ForeverPHP - Forever with PHP.",
 	"keywords": ["framework", "foreverphp"],
 	"license": "MIT",
-	"require": {
-        "foreverphp/framework": "0.3.*",
-		"phpoffice/phpexcel": "1.8.*",
-		"phpmailer/phpmailer": "5.2.*"
-	}
+	"authors": [
+        {
+            "name": "Daniel Nuñez S.",
+            "email": "dnunezse@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0",
+		"foreverphp/framework": "0.3.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Apps": "apps/"
+        }
+    }
 }
