@@ -1,0 +1,55 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Consola de administración propia del framework.
+ *
+ * @author      Daniel Nuñez S. <dnunez@emarva.com>
+ * @since       Version 0.1.0
+ */
+
+/*
+ * No se usa el ORM para trabajar solo se utiliza QueryRaw.
+ *
+ * Es necesario eliminar este archivo en produccion.
+ */
+
+/**
+ * PODRIA APARTE DE MANEJAR LAS BASES DE DATOS MINIFICAR COSAS Y COLECTAR STATICOS
+ */
+
+class CLI {
+    const HELP_TEXT = '';
+
+    private static $instance;
+
+    public function __construct() {}
+
+    public static function getInstance() {
+        if (is_null(static::$instance)) {
+            static::$instance = new static();
+        }
+
+        return static::$instance;
+    }
+
+	private static function help() {
+		echo "\nForeverPHP\n";
+		echo "Consola de administración\n";
+	}
+
+	private function getVersion() {
+        return 'Version: ' . FOREVERPHP_VERSION;
+	}
+}
+
+/*
+ * Si hay mas de un argumento se procede al analisis de argumentos.
+ */
+if ($argc > 1) {
+    $cli = new CLI::getInstance();
+    $cli::run();
+}
+
+echo 'numero de params. '.$argc;
+
+print_r($argv);

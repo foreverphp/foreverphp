@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CRUD in foreverPHP</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/static/js/foreverphp.min.js"></script>
+	<script>
+		$(document).on("ready", function() {
+			// Defino los eventos click de los botones
+			$("#btn-actualizar").on("click", function() {
+				$.ajax({
+					url: "/db/clients/get",
+					type: "post",
+			    	dataType: "json",
+		    		success: function (response) {
+		    			$("#grilla").html("");
+
+		    			if (!response) {
+		    				$("#grilla").html("(Sin datos)");
+			    		} else {
+		    				$.each(response, function(i, item) {
+		    					$("#grilla").append("Id: " + item.id + " / Rut: " + item.rut + " / Nombre: " + item.nombre + "<br />");
+		    				});
+			    		}
+		    		}
+				});
+			});
+			$("#btn-insertar").on("click", function() {
+				$.ajax({
+					url: "/db/clients/insert",
+					type: "post",
+					data: { "rut": $("#rut").val(), "nombre": $("#nombre").val() },
+		    		success: function (response) {
+		    			$("#btn-actualizar").click();
+		    		}
+				});
+			});
+			$("#btn-obtener").on("click", function() {
+				$.ajax({
+					url: "/db/clients/get/" + $("#id").val(),
+					type: "get",
+			    	dataType: "json",
+		    		success: function (response) {
+		    			if (response != 0) {
+		    				$("#rut").val(response["0"].rut);
+		    				$("#nombre").val(response["0"].nombre);
+			    		}
+		    		}
+				});
+			});
+			$("#btn-guardar").on("click", function() {
+				$.ajax({
+					url: "/db/clients/update",
+					type: "post",
+			    	data: { "id": $("#id").val(), "rut": $("#rut").val(), "nombre": $("#nombre").val() },
+		    		success: function (response) {
+		    			$("#btn-actualizar").click();
+		    		}
+				});
+			});
+			$("#btn-eliminar").on("click", function() {
+				$.ajax({
+					url: "/db/clients/delete/" + $("#id").val(),
+					type: "get",
+		    		success: function (response) {
+		    			$("#btn-actualizar").click();
+		    		}
+				});
+			});
+
+			// Primera carga de datos
+			$("#btn-actualizar").click();
+		});
+	</script>
+</head>
+<body>
+	<p>CRUD en foreverPHP</p>
+	<div id="grilla">{{datos}}</div>
+	<div id="edicion">
+		<p>
+			<label for="id">Id (Solo para editar y eliminar) </label><input type="text" id="id" placeholder="Ingrese un Id" /><br />
+			<label for="rut">Rut </label><input type="text" id="rut" placeholder="Ingrese un Rut" /><br />
+			<label for="nombre">Nombre </label><input type="text" id="nombre" placeholder="Ingrese un Nombre" />
+		</p>
+	</div>
+	<div id="botonera">
+		<button id="btn-actualizar">Actualizar</button>
+		<button id="btn-insertar">Insertar</button>
+		<button id="btn-obtener">Obtener</button>
+		<button id="btn-guardar">Guardar</button>
+		<button id="btn-eliminar">Eliminar</button>
+	</div><br />
+	<a href="/acercade">ForeverPHP</a>
+</body>
+</html>

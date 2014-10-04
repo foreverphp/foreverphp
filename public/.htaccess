@@ -1,0 +1,18 @@
+# Proteje los archivos y directorios de miradas indiscretas
+#<FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\..*|Entries.*|Repository|Root|Tag|Template)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig\.save)$">
+#  Order allow,deny
+#</FilesMatch>
+
+# Que no se listen los directorios y se desactiva MultiViews
+Options -Indexes +MultiViews
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redireccionar Url con barra final
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    # Para manejar las Urls amigables
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !=/favicon.ico
+    RewriteRule ^ index.php [L]
+</IfModule>

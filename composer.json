@@ -1,0 +1,11 @@
+{
+	"name": "foreverphp/foreverphp",
+	"description": "ForeverPHP - Forever with PHP.",
+	"keywords": ["framework", "foreverphp"],
+	"license": "MIT",
+	"require": {
+        "foreverphp/framework": "0.3.*",
+		"phpoffice/phpexcel": "1.8.*",
+		"phpmailer/phpmailer": "5.2.*"
+	}
+}
