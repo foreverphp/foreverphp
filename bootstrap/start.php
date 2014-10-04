@@ -26,11 +26,8 @@ define('APPS_ROOT', ROOT_PATH . DS . 'public' . DS . 'apps');
 require ROOT_PATH . '/vendor/autoload.php';
 
 /*
- * Incluye el archivo que se encargara de realizar las autocargas
- * de clases.
+ * Incluye el cargador de clases de ForeverPHP.
  */
-require FOREVERPHP_ROOT . '/ClassLoader.php';
-
 use ForeverPHP\Core\ClassLoader;
 
 ClassLoader::addDirectories(ROOT_PATH);
