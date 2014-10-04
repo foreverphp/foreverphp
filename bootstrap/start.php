@@ -18,7 +18,7 @@ define('ROOT_PATH', dirname(dirname(__FILE__)));
 define('FOREVERPHP_ROOT', dirname(__FILE__));
 
 // Ruta raiz de las Apps
-define('APPS_ROOT', ROOT_PATH . DS . 'public' . DS . 'apps');
+define('APPS_ROOT', ROOT_PATH . DS . 'apps');
 
 /*
  * Incluyo el cargador de clases de Composer
