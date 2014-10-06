@@ -1,7 +1,6 @@
 {
 	"name": "foreverphp/foreverphp",
 	"description": "ForeverPHP - Forever with PHP.",
-    "version": "0.3.0-beta",
 	"keywords": ["framework", "foreverphp"],
 	"license": "MIT",
 	"authors": [
