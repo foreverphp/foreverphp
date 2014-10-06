@@ -42,20 +42,20 @@ use ForeverPHP\Core\Settings;
 /*
  * Se desactiva el control de errores de PHP, ahora sera el framework quien los maneje.
  */
-if (Settings::inDebug()) {
+if (Settings::getInstance()->inDebug()) {
     error_reporting(-1);
 }
 
 /*
  * Configura la zona horaria.
  */
-date_default_timezone_set(Settings::get('timezone'));
+date_default_timezone_set(Settings::getInstance()->get('timezone'));
 
 /*
  * Carga los alias.
  * Los alias de clases se definen en el archivo de configuraciones 'settings.php'.
  */
-$aliases = Settings::get('aliases');
+$aliases = Settings::getInstance()->get('aliases');
 
 AliasLoader::getInstance($aliases)->register();
 
