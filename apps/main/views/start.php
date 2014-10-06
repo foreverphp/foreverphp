@@ -9,7 +9,7 @@ class Start extends View {
      */
     public function run() {
         // Se usa un contexto global para el render
-        return Response::make('homepage');
+        return Response::render('homepage');
     }
 
     public function otherMethod() {
