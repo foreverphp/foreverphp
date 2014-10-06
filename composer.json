@@ -11,12 +11,12 @@
     ],
     "require": {
         "php": ">=5.3.0",
-		"foreverphp/framework": "0.3.*@beta"
+		"foreverphp/framework": "dev-master"
     },
     "autoload": {
         "psr-0": {
             "Apps": "apps/"
         }
     },
-    "minimum-stability": "beta"
+    "minimum-stability": "dev"
 }
