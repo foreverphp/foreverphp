@@ -14,7 +14,6 @@
  */
 require_once './../bootstrap/start.php';
 
-return;
 if (!defined('FOREVERPHP_LOADED')) {
     die('Critical failure in ForeverPHP');
 }
