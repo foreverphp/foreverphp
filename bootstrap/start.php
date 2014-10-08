@@ -2,7 +2,7 @@
 /*
  * Version del framework.
  */
-define('FOREVERPHP_VERSION', '0.3.0');
+define('FOREVERPHP_VERSION', '0.4.0');
 
 /*
  * Se definen las rutas bases del framework
