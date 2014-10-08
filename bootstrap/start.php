@@ -2,7 +2,7 @@
 /*
  * Version del framework.
  */
-define('FOREVERPHP_VERSION', '0.4.0');
+define('FOREVERPHP_VERSION', '0.3.0');
 
 /*
  * Se definen las rutas bases del framework
@@ -13,9 +13,6 @@ define('DS', DIRECTORY_SEPARATOR);
 
 // Ruta raiz
 define('ROOT_PATH', dirname(dirname(__FILE__)));
-
-// Ruta raiz de Core
-define('FOREVERPHP_ROOT', dirname(__FILE__));
 
 // Ruta raiz de las Apps
 define('APPS_ROOT', ROOT_PATH . DS . 'apps');
