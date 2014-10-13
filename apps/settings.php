@@ -125,17 +125,17 @@ return array(
 
     /*
      * De aqui en adelante puedes definir tu propia configuracion la cual sera
-     * cargada por la libreria 'Config'.
+     * cargada por el componente 'Settings'.
      *
      * Modo de uso
      *
      *     Formato de configuracion:
      *
-     *         $config['my_config'] = 'my config';
+     *         'name' = value,
      *
      *     Modo de obtener la configuracion
      *
-     *         Settings::get('my_config');
+     *         Settings::get('myConfig');
      */
 
     // Un ejemplo de configuracion propia
