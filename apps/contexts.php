@@ -8,7 +8,7 @@
  */
 class GlobalContext extends Context {
     public function __construct($items = null) {
-        $this->set('env', (Settings::getInstance()->inDebug()) ? 'dev' : 'prod');
+        $this->set('env', (Settings::inDebug()) ? 'dev' : 'prod');
         $this->set('title', 'ForeverPHP - Framework MVT');
     }
 }
