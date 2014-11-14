@@ -105,7 +105,7 @@ return array(
      * Alias de clases para evitar usar 'use' siempre.
      */
     'aliases' => array(
-        'App' => 'ForeverPHP\Core\App',
+        'App' => 'ForeverPHP\Core\Facades\App',
         'Context' => 'ForeverPHP\View\Context',
         'Cookie' => 'ForeverPHP\Core\Cookie',
         'CSRF' => 'ForeverPHP\Security\CSRF',
