@@ -45,7 +45,7 @@ return array(
     /*
      * Configuracion de bases de datos.
      *
-     * Motores disponibles: mariadb(mysql), mssql, postgresql
+     * Motores disponibles: mariadb(mysql), mssql, postgresql, sqlsrv
      */
     'dbs' => array(
         'default' => array(
