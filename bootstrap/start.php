@@ -23,6 +23,11 @@ define('APPS_ROOT', ROOT_PATH . DS . 'apps');
 require ROOT_PATH . '/vendor/autoload.php';
 
 /*
+ * Incluyo el archivo con las funciones auxiliares.
+ */
+require ROOT_PATH . '/vendor/foreverphp/framework/src/ForeverPHP/Core/helpers.php';
+
+/*
  * Incluye el cargador de clases de ForeverPHP.
  */
 use ForeverPHP\Core\ClassLoader;
