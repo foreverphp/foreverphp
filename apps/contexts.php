@@ -17,4 +17,4 @@ class GlobalContext extends Context {
  * Despues de definir el contexto global lo agrego a App para que este
  * disponible para la aplicacion en ejecucion.
  */
-App::setGlobalContexts('GlobalContext');
+App::setGlobalContext('GlobalContext');

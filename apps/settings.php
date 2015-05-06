@@ -118,6 +118,7 @@ return array(
         'Route' => 'ForeverPHP\Core\Facades\Route',
         'Settings' => 'ForeverPHP\Core\Facades\Settings',
         'Session' => 'ForeverPHP\Core\Facades\Session',
+        'View' => 'ForeverPHP\View\View',
     ),
 
     /*
