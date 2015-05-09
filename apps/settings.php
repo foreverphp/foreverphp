@@ -52,6 +52,8 @@ return array(
             'engine' => 'mariadb',
             'server' => 'localhost',
             'port' => '3306',
+            'usingSocket' => false,
+            'socket' => '/tmp/mysql.sock',
             'database' => 'foreverphp',
             'user' => '',
             'password' => ''
