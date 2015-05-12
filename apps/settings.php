@@ -29,6 +29,11 @@ return array(
     ),
 
     /*
+     * Indica si las Apps trabajaran con espacios de nombres.
+     */
+    'usingNamespaces' => false,
+
+    /*
      * Motor de template
      */
     'templateEngine' => 'chameleon',
