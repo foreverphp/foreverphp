@@ -18,12 +18,12 @@ define('ROOT_PATH', dirname(dirname(__FILE__)));
 define('APPS_ROOT', ROOT_PATH . DS . 'apps');
 
 /*
- * Incluyo el cargador de clases de Composer
+ * Incluye el cargador de clases de Composer
  */
 require ROOT_PATH . '/vendor/autoload.php';
 
 /*
- * Incluyo el archivo con las funciones auxiliares.
+ * Incluye el archivo con las funciones auxiliares.
  */
 require ROOT_PATH . '/vendor/foreverphp/framework/src/ForeverPHP/Core/helpers.php';
 
@@ -36,17 +36,22 @@ ClassLoader::addDirectories(ROOT_PATH);
 ClassLoader::register();
 
 /*
- * Importo las clases necesarias para el inicio.
+ * Se importan las clases necesarias para el inicio.
  */
 use ForeverPHP\Core\AliasLoader;
 use ForeverPHP\Core\Settings;
 
 /*
- * Se desactiva el control de errores de PHP, ahora sera el framework quien los maneje.
+ * Notificar todos los errores de PHP, si se esta en Debug.
  */
 if (Settings::getInstance()->inDebug()) {
     error_reporting(-1);
 }
+
+/*
+ * Deshabilita la salida de errores por pantalla.
+ */
+ini_set('display_errors', 0);
 
 /*
  * Configura la zona horaria.
