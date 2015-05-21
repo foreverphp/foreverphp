@@ -79,7 +79,7 @@ return array(
 
     'cache' => array(
         'engine' => 'filecache',
-        'location' => 'cache',
+        'location' => ROOT_PATH . DS . 'cache',
         'timeout' => 120,
         'maxEntries' => 200
     ),
@@ -113,6 +113,7 @@ return array(
      */
     'aliases' => array(
         'App' => 'ForeverPHP\Core\Facades\App',
+        'Cache' => 'ForeverPHP\Core\Facades\Cache',
         'Context' => 'ForeverPHP\View\Context',
         'Cookie' => 'ForeverPHP\Core\Facades\Cookie',
         'File' => 'ForeverPHP\Core\Facades\File',
