@@ -67,6 +67,11 @@ $aliases = Settings::getInstance()->get('aliases');
 AliasLoader::getInstance($aliases)->register();
 
 /*
+ * Inicializa los requerimientos de ejecución.
+ */
+Setup::initialize();
+
+/*
  * Carga las rutas.
  */
 $routes = APPS_ROOT . '/routes.php';
