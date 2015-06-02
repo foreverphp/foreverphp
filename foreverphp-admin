@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * Consola de administración propia del framework.
+ * Consola de administración propia de ForeverPHP.
  *
  * @author      Daniel Nuñez S. <dnunez@emarva.com>
  * @since       Version 0.1.0
@@ -17,9 +17,58 @@
  * PODRIA APARTE DE MANEJAR LAS BASES DE DATOS MINIFICAR COSAS Y COLECTAR STATICOS
  */
 
-class CLI {
-    const HELP_TEXT = '';
+define('FOREVERPHP_ADMIN', true);
 
+class CLI {
+    /*
+     * Salida de colores bach para color de texto.
+     */
+    private $foreground = array(
+        'black' => '0;30',
+        'dark_gray' => '1;30',
+        'red' => '0;31',
+        'bold_red' => '1;31',
+        'green' => '0;32',
+        'bold_green' => '1;32',
+        'brown' => '0;33',
+        'yellow' => '1;33',
+        'blue' => '0;34',
+        'bold_blue' => '1;34',
+        'purple' => '0;35',
+        'bold_purple' => '1;35',
+        'cyan' => '0;36',
+        'bold_cyan' => '1;36',
+        'white' => '1;37',
+        'bold_gray' => '0;37',
+    );
+
+    /*
+     * Salida de colores bach para color de fondo.
+     */
+    private $background = array(
+        'black' => '40',
+        'red' => '41',
+        'magenta' => '45',
+        'yellow' => '43',
+        'green' => '42',
+        'blue' => '44',
+        'cyan' => '46',
+        'light_gray' => '47',
+    );
+
+    /*
+     * Host para el servidor de desarrollo.
+     */
+    private $serverHost = '127.0.0.1';
+
+    /*
+     * Puerto para el servidor de desarrollo.
+     */
+    private $serverPort = '8080';
+
+    /*
+     * Instancia única de la clase CLI.
+     */
     private static $instance;
 
     public function __construct() {}
@@ -32,24 +81,109 @@ class CLI {
         return static::$instance;
     }
 
-	private static function help() {
-		echo "\nForeverPHP\n";
-		echo "Consola de administración\n";
-	}
+    private function fgColor($color, $string) {
+        $newString = $string;
 
-	private function getVersion() {
-        return 'Version: ' . FOREVERPHP_VERSION;
-	}
+        if (isset($this->foreground[$color])) {
+            $newString = "\033[" . $this->foreground[$color] . "m" . $newString . "\033[0m";
+        }
+
+        return $newString;
+    }
+
+    private function bgColor($color, $string) {
+        $newString = $string;
+
+        if (isset($this->background[$color])) {
+            $newString = "\033[" . $this->background[$color] . "m" . $newString . "\033[0m";
+        }
+
+        return $newString;
+    }
+
+    public function run() {
+
+    }
+
+    public function showHelp() {
+        echo "Usage:\n";
+        echo "    " . $this->bgColor('red', $this->fgColor('blue', 'foreverphp-admin')) . " <command> [<options>]";
+        echo "\n\n";
+        echo "Commands:\n";
+        echo "    create-app       Create new app.\n";
+        echo "    run-server       Running development server.";
+        echo "\n\n";
+        echo "Options:\n";
+        echo "    " . $this->fgColor('green', '--version') . "       Show ForeverPHP version.";
+        echo "\n\n";
+        echo "See 'foreverphp help <command>' for more information on a specific command.\n";
+    }
+
+    public function help($arguments) {
+        // Proporciona ayuda sobre comandos y argumentos
+        echo $this->fgColor('green', 'ForeverPHP') . "\n";
+        echo "Help for commands ans arguments.\n";
+    }
+
+    public function getVersion() {
+        return FOREVERPHP_VERSION;
+    }
+
+    public function version() {
+        echo $this->fgColor('green', 'ForeverPHP') . " version " . $this->getVersion() . "\n";
+    }
+
+    public function runServer($arguments) {
+        // Se busca el host y el puerto en los argumentos
+        $keyHost = array_search('--host', $arguments);
+        $keyPort = array_search('--port', $arguments);
+
+        /*
+         * Si $keyHost no es false se paso argumento --host, por lo
+         * tanto el siguiente argumento deberia ser el host.
+         */
+        if ($keyHost) {
+            $this->serverHost = $arguments[$keyHost + 1];
+        }
+
+        /*
+         * Si $keyPort no es false se paso argumento --port, por lo
+         * tanto el siguiente argumento deberia ser el puerto.
+         */
+        if ($keyPort) {
+            $this->serverPort = $arguments[$keyPort + 1];
+        }
+
+        echo $this->fgColor('green', 'ForeverPHP') . " version \033[" . $this->foreground['white'] . "m" . $this->getVersion() . "\033[0m 0.4.0\n";
+        echo "Server is running at " . $this->fgColor('blue', 'http://' . $this->serverHost . ':' . $this->serverPort . '/') . "\n";
+        echo "Quit with Ctrl-C.\n";
+
+        // Ejecuto el comando para iniciar el servidor
+        // NOTA hacerlo compatible con Windows
+        shell_exec('cd public/ && php -S ' . $this->serverHost . ':' . $this->serverPort);
+        shell_exec('cd ..');
+    }
 }
 
 /*
  * Si hay mas de un argumento se procede al analisis de argumentos.
  */
+require 'bootstrap/start.php';
+
+$cli = CLI::getInstance();
+
 if ($argc > 1) {
-    $cli = new CLI::getInstance();
-    $cli::run();
+    $firstArg = $argv['1'];
+
+    if ($firstArg === 'help') {
+        $cli->help();
+    } elseif ($firstArg === '--version') {
+        $cli->version();
+    } elseif ($firstArg === 'run-server') {
+        $cli->runServer($argv);
+    } else {
+        $cli->showHelp();
+    }
+} else {
+    $cli->showHelp();
 }
-
-echo 'numero de params. '.$argc;
-
-print_r($argv);

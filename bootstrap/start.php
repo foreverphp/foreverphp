@@ -40,6 +40,16 @@ ClassLoader::register();
  */
 use ForeverPHP\Core\AliasLoader;
 use ForeverPHP\Core\Settings;
+use ForeverPHP\Core\Setup;
+
+/*
+ * Valida si el archivo fue requerido desde foreverphp-admin, de ser
+ * así se detiene la ejecución en este punto porque no es necesario
+ * seguir con la carga.
+ */
+if (defined('FOREVERPHP_ADMIN')) {
+    return;
+}
 
 /*
  * Notificar todos los errores de PHP, si se esta en Debug.
