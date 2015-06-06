@@ -25,7 +25,7 @@ return array(
      * aplicacion para ser usada en tus rutas.
      */
     'apps' => array(
-        'main',
+        'main'
     ),
 
     /*
@@ -40,11 +40,11 @@ return array(
 
     /*
      * Configuracion de correos de los administradores, estos seran
-     * utilizados para enviar las excepciones cuando se este en
-     * Debug false.
+     * utilizados para enviar las excepciones, errores, etc. cuando
+     * se este en Debug false.
      */
     'admins' => array(
-        'admin@localhost',
+        'admin@localhost'
     ),
 
     /*
@@ -109,7 +109,7 @@ return array(
     'minifyTemplate' => true,
 
     /*
-     * Alias de clases para evitar usar 'use' siempre.
+     * Alias de clases para evitar usar espacio de nombre completo.
      */
     'aliases' => array(
         'App' => 'ForeverPHP\Core\Facades\App',
@@ -119,14 +119,15 @@ return array(
         'File' => 'ForeverPHP\Core\Facades\File',
         'Hash' => 'ForeverPHP\Core\Facades\Hash',
         'Mail' => 'ForeverPHP\Core\Facades\Mail',
-        'QueryRaw' => 'ForeverPHP\Core\Facades\QueryRaw',
+        'QueryKeyValue' => 'ForeverPHP\Core\Facades\QueryKeyValue',
+        'QuerySQL' => 'ForeverPHP\Core\Facades\QuerySQL',
         'Redirect' => 'ForeverPHP\Core\Facades\Redirect',
         'Request' => 'ForeverPHP\Core\Facades\Request',
         'Response' => 'ForeverPHP\Core\Facades\Response',
         'Route' => 'ForeverPHP\Core\Facades\Route',
         'Settings' => 'ForeverPHP\Core\Facades\Settings',
         'Session' => 'ForeverPHP\Core\Facades\Session',
-        'View' => 'ForeverPHP\View\View',
+        'View' => 'ForeverPHP\View\View'
     ),
 
     /*
