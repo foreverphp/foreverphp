@@ -2,7 +2,7 @@
 /*
  * Por norma general todos los nombres de clases deben usar CamelCase
  */
-class Start extends View {
+class StartView extends View {
     /*
      * Esta funcion es necesaria para cargar el modulo, siempre se debe
      * declarar.

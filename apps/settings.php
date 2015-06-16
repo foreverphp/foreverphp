@@ -131,6 +131,20 @@ return array(
     ),
 
     /*
+     * Mensajes personalizados de error, para activarlos solo descomenta
+     * las lineas.
+     *
+     * TODO: En un futuro tambien se podran usar rutas.
+     */
+    /*'errors' => array(
+        '404' => 'errors/404.html',
+        '500' => 'errors/500.html',
+        '502' => 'errors/502.html',
+        '503' => 'errors/503.html',
+        '504' => 'errors/504.html'
+    ),*/
+
+    /*
      * De aqui en adelante puedes definir tu propia configuracion la cual sera
      * cargada por el componente 'Settings'.
      *
