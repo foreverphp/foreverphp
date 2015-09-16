@@ -25,7 +25,7 @@ return array(
      * aplicacion para ser usada en tus rutas.
      */
     'apps' => array(
-        'main'
+        'main',
     ),
 
     /*
@@ -44,7 +44,7 @@ return array(
      * se este en Debug false.
      */
     'admins' => array(
-        'admin@localhost'
+        'admin@localhost',
     ),
 
     /*
@@ -61,7 +61,7 @@ return array(
             'socket' => '/tmp/mysql.sock',
             'database' => 'foreverphp',
             'user' => '',
-            'password' => ''
+            'password' => '',
         )
     ),
 
@@ -81,7 +81,7 @@ return array(
         'engine' => 'filecache',
         'location' => ROOT_PATH . DS . 'cache',
         'timeout' => 120,
-        'maxEntries' => 200
+        'maxEntries' => 200,
     ),
 
     /*
@@ -93,7 +93,7 @@ return array(
         'smtpAuth' => false,
         'smtpSecure' => 'none',
         'username' => '',
-        'password' => ''
+        'password' => '',
     ),
 
     /*
@@ -114,9 +114,8 @@ return array(
     'aliases' => array(
         'App' => 'ForeverPHP\Core\Facades\App',
         'Cache' => 'ForeverPHP\Core\Facades\Cache',
-        'Context' => 'ForeverPHP\View\Context',
+        'Context' => 'ForeverPHP\Core\Facades\Context',
         'Cookie' => 'ForeverPHP\Core\Facades\Cookie',
-        'File' => 'ForeverPHP\Core\Facades\File',
         'Hash' => 'ForeverPHP\Core\Facades\Hash',
         'Mail' => 'ForeverPHP\Core\Facades\Mail',
         'QueryKeyValue' => 'ForeverPHP\Core\Facades\QueryKeyValue',
@@ -127,7 +126,8 @@ return array(
         'Route' => 'ForeverPHP\Core\Facades\Route',
         'Settings' => 'ForeverPHP\Core\Facades\Settings',
         'Session' => 'ForeverPHP\Core\Facades\Session',
-        'View' => 'ForeverPHP\View\View'
+        'Storage' => 'ForeverPHP\Core\Facades\Storage',
+        'View' => 'ForeverPHP\View\View',
     ),
 
     /*
@@ -141,7 +141,7 @@ return array(
         '500' => 'errors/500.html',
         '502' => 'errors/502.html',
         '503' => 'errors/503.html',
-        '504' => 'errors/504.html'
+        '504' => 'errors/504.html',
     ),*/
 
     /*
