@@ -25,7 +25,7 @@ return array(
      * aplicacion para ser usada en tus rutas.
      */
     'apps' => array(
-        'main',
+        'Main',
     ),
 
     /*
