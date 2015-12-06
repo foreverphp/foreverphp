@@ -33,7 +33,6 @@ require ROOT_PATH . '/vendor/foreverphp/framework/src/ForeverPHP/Core/helpers.ph
 use ForeverPHP\Core\ClassLoader;
 
 ClassLoader::addDirectories(ROOT_PATH);
-ClassLoader::addDirectories(APPS_ROOT);
 ClassLoader::register();
 
 /*
