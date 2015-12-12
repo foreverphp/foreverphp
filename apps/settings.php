@@ -2,7 +2,6 @@
 /*
  * Archivo de configuraciones para todas las aplicaciones
  */
-
 return array(
     /*
      * Debug

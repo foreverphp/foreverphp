@@ -4,5 +4,5 @@
  *
  * Por norma deben tener todos el tercer parametro en true.
  */
-Context::set('env', (Settings::inDebug()) ? 'dev' : 'prod', true);
+Context::set('debug', Settings::inDebug(), true);
 Context::set('title', 'ForeverPHP - Framework MVT', true);
