@@ -1,8 +1,6 @@
 ForeverPHP
 ==========
 
-Framework PHP experimental, constantemente en desarrollo.
+Framework PHP para PHP 7.0.
 
-En busca de colaboradores :)
-
-Version actual en desarrollo 0.4.0
+Version actual en desarrollo 1.0.0
