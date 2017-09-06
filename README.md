@@ -1,6 +1,6 @@
 ForeverPHP
 ==========
 
-Framework PHP para PHP 7.0.
+Framework PHP para PHP.
 
-Version actual en desarrollo 1.0.0
+Version actual en desarrollo 0.4.0
