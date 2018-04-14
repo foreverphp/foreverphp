@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-		"foreverphp/framework": "0.4.*"
+        "foreverphp/framework": "0.4.*"
     },
     "autoload": {
         "psr-4": {
