@@ -3,12 +3,6 @@
     "description": "ForeverPHP - Forever with PHP.",
     "keywords": ["framework", "foreverphp"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Daniel Nuñez S.",
-            "email": "dnunez@pointers.cl"
-        }
-    ],
     "require": {
         "php": ">=5.4.0",
         "foreverphp/framework": "dev-master"
