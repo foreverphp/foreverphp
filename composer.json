@@ -1,17 +1,22 @@
 {
-    "name": "foreverphp/foreverphp",
-    "description": "ForeverPHP - Forever with PHP.",
-    "keywords": ["framework", "foreverphp"],
-    "license": "MIT",
+	"name": "foreverphp/foreverphp",
+	"description": "ForeverPHP - Forever with PHP.",
+	"keywords": ["framework", "foreverphp"],
+	"license": "MIT",
+	"authors": [
+        {
+            "name": "Daniel Nuñez S.",
+            "email": "dnunez@pointers.cl"
+        }
+    ],
     "require": {
-        "php": ">=5.4.0",
-        "foreverphp/framework": "dev-master"
+        "php": ">=7.0.0",
+		"foreverphp/framework": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Apps\\": "apps/"
+            "Apps\\": "project/Apps/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "dev"
 }

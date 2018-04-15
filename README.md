@@ -1,12 +1,14 @@
 ## ForeverPHP
 
-[![Latest Stable Version](https://poser.pugx.org/foreverphp/framework/v/stable)](https://packagist.org/packages/foreverphp/framework)
-[![Total Downloads](https://poser.pugx.org/foreverphp/framework/downloads)](https://packagist.org/packages/foreverphp/framework)
-[![License](https://poser.pugx.org/foreverphp/framework/license)](https://packagist.org/packages/foreverphp/framework)
+[![License](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/foreverphp/foreverphp/blob/master/LICENSE)
 
 ForeverPHP es un framework pensado para una o múltiples aplicaciones, desarrollado lo mas simple posible para una fácil administración.
 
 Con el puedes crear desde un simple sitio web hasta complejos sistemas.
+
+## Documentación
+
+La documentación oficial esta disponible en el sitio de [ForeverPHP](https://foreverphp.pointers.cl/docs).
 
 ### Licencia
 
